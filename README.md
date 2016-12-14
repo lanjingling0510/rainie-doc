@@ -69,7 +69,7 @@ rainieDoc -c rainie-doc.json
 }
 
 ```
-具体内容请看[配置文件说明](https://github.com/lanjingling0510/rainie-doc/#/config)
+具体内容请看[配置文件说明](https://lanjingling0510.github.io/rainie-doc/#/docs/config)
 
 ## How to Contribute
 
