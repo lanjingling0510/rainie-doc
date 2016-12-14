@@ -3,6 +3,5 @@ npm-debug.log
 dist
 firebase-debug.log
 .envrc
-tmp
 tags
 .tern-port

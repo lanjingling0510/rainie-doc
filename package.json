@@ -8,6 +8,7 @@
   },
   "scripts": {
     "start": "make start",
+    "release": "make release",
     "build": "rm -rf dist && env NODE_ENV=production webpack --config ./config/webpack.js"
   },
   "repository": {
