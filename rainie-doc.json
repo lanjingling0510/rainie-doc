@@ -1,0 +1,20 @@
+{
+  "github_url": "https://github.com/lanjingling0510/rainie-doc",
+  "name": "文档web自动生成工具",
+  "logo_icon": "",
+  "categories": [
+  	"文档"
+  ],
+  "staticDocs": [
+		{
+				"type": "markdown",
+				"urlId": "config",
+				"category": "文档",
+				"title": "配置文件说明",
+				"description": "rainie-doc.json",
+				"path": "./docs/Guids.md"
+		}
+	],
+  "feature": "README.md",
+  "usage": "./docs/usage.js"
+}

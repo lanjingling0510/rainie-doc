@@ -1,0 +1,108 @@
+.features {
+  width: 100%;
+  padding: 30px;
+  background-color: #FFFBF5;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.features h1 {
+  color: #005faf;
+  font-size: 2.3rem;
+  margin-bottom: 30px;
+  padding-bottom: 23px;
+  border-bottom: 1px solid rgba(88, 68, 82, 0.1);
+}
+
+.features h2 {
+  color: #009688;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  margin-top: 30px;
+  border-bottom: 1px solid rgba(88, 68, 82, 0.1);
+}
+
+.features h3 {
+  color: #009688;
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.features a {
+  color: #5D3861;
+}
+
+.features p {
+  margin-bottom: 10px;
+  max-width: 700px;
+}
+
+.features p:last-child {
+  margin-bottom: 0;
+}
+
+.features p:empty {
+  display: none;
+}
+
+.features ul {
+  list-style: disc;
+}
+
+.features ol {
+  list-style: decimal;
+}
+
+.features ul, .features ol {
+  max-width: 700px;
+  margin-left: 25px;
+  margin-bottom: 10px;
+}
+
+.features ul p + ul, .features ol p + ul {
+  margin-top: -10px;
+}
+
+
+.features ul:last-child, .features ol:last-child {
+  margin-bottom: 0;
+}
+
+.features .CodeMirror {
+  margin-bottom: 10px;
+}
+
+.features .CodeMirror:last-child {
+  margin-bottom: 0;
+}
+
+.features ul .CodeMirror:last-child, .features ol .CodeMirror:last-child {
+  margin-bottom: 10px;
+}
+
+.features ul ul, .features ul ol, .features ol ol, .features ol ul {
+  margin-bottom: 0;
+}
+
+.features-header_link {
+  display: none;
+  margin-left: 7px;
+  text-decoration: none;
+  opacity: .3;
+}
+
+.features-header_link:hover {
+  opacity: .6;
+}
+
+h1:hover .features-header_link,
+h2:hover .features-header_link,
+h3:hover .features-header_link,
+h4:hover .features-header_link,
+h5:hover .features-header_link,
+h6:hover .features-header_link {
+  display: inline;
+}

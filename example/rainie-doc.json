@@ -1,0 +1,24 @@
+{
+  "github_url": "",
+  "name": "CQASO",
+  "title": "一个文档生成工具",
+  "description": "全自动的文档生成工具, 可自定义feature, usage, markdown文档",
+  "logo_icon": "",
+  "entry_path": "./src/*.js",
+  "categories": [
+    "General",
+    "API"
+  ],
+  "staticDocs": [
+    {
+        "type": "markdown",
+        "urlId": "readme",
+        "category": "General",
+        "title": "readme",
+        "description": "",
+        "path": "README.md"
+    }
+  ],
+  "feature": "feature.md",
+  "usage": "usage.js"
+}

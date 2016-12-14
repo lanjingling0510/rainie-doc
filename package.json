@@ -1,0 +1,88 @@
+{
+  "name": "rainie-doc",
+  "version": "0.0.0",
+  "description": "根据代码注释自动生成说明网站",
+  "main": "index.js",
+  "bin": {
+    "rainieDoc": "./index.js"
+  },
+  "scripts": {
+    "start": "make start",
+    "build": "rm -rf dist && env NODE_ENV=production webpack --config ./config/webpack.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lanjingling0510/rainie-doc.git"
+  },
+  "keywords": [
+    "jsdoc"
+  ],
+  "author": "rainie <chenyutian0510@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lanjingling0510/rainie-doc/issues"
+  },
+  "homepage": "https://github.com/lanjingling0510/rainie-doc",
+  "devDependencies": {
+    "babel-core": "^6.8.0",
+    "babel-eslint": "^6.0.4",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-add-module-exports": "^0.2.0",
+    "babel-plugin-espower": "^2.1.2",
+    "babel-plugin-transform-class-properties": "^6.8.0",
+    "babel-polyfill": "^6.3.14",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-react": "^6.5.0",
+    "baggage-loader": "^0.2.4",
+    "casperjs": "^1.1.1",
+    "classnames": "^2.1.5",
+    "codemirror": "^5.7.0",
+    "core-js": "^2.2.2",
+    "css-loader": "^0.19.0",
+    "cssnext-loader": "^1.0.1",
+    "enzyme": "^2.1.0",
+    "eslint": "^2.10.2",
+    "eslint-config-airbnb": "9.0.1",
+    "eslint-plugin-import": "^1.8.0",
+    "eslint-plugin-jsx-a11y": "^1.2.1",
+    "eslint-plugin-react": "^5.1.1",
+    "file-loader": "^0.8.4",
+    "history": "^4.4.1",
+    "html-webpack-plugin": "^2.24.1",
+    "json-loader": "^0.5.3",
+    "karma": "^0.13.21",
+    "karma-cli": "^0.1.2",
+    "karma-es5-shim": "0.0.4",
+    "karma-mocha": "^0.2.2",
+    "karma-mocha-reporter": "^1.2.2",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-sauce-launcher": "^0.3.0",
+    "karma-sinon": "^1.0.4",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^1.7.0",
+    "loader-utils": "^0.2.11",
+    "lodash": "^3.10.1",
+    "mocha": "^2.4.5",
+    "phantomjs-prebuilt": "^2.1.4",
+    "power-assert": "^1.2.0",
+    "react": "0.14.8",
+    "react-addons-test-utils": "^0.14.8",
+    "react-dom": "0.14.8",
+    "react-hot-loader": "^1.3.0",
+    "remarkable": "^1.6.2",
+    "reset.css": "^2.0.2",
+    "sinon": "^1.17.4",
+    "style-loader": "^0.12.4",
+    "url-loader": "^0.5.6",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "co": "^4.6.0",
+    "colors": "^1.1.2",
+    "commander": "^2.9.0",
+    "fs-promise": "^1.0.0",
+    "jsdoc-to-markdown": "^2.0.1",
+    "thunkify": "^2.1.2"
+  }
+}

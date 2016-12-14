@@ -1,0 +1,9 @@
+.jsdoc_arguments-optional {
+  font-style: italic;
+}
+
+.jsdoc_arguments-props_label {
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
