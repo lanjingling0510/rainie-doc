@@ -7,8 +7,8 @@
     "rainieDoc": "./index.js"
   },
   "scripts": {
-    "start": "make start",
-    "release": "make release",
+    "start": "./scripts/start.sh",
+    "release": "./scripts/release.sh",
     "build": "rm -rf dist && env NODE_ENV=production webpack --config ./config/webpack.js"
   },
   "repository": {
