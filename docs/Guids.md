@@ -5,7 +5,7 @@
 * [例子](#example)
 * [配置选项](#config)
 
-## 例子<a name="example"></a>
+## 例子
 
 ```javascript
 {
@@ -34,7 +34,7 @@
 }
 ```
 
-## 配置选项<a name="config"></a>
+## 配置选项
 
 ##### `github_url`
 github地址

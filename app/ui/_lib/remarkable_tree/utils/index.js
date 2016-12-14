@@ -14,6 +14,13 @@ export function tag (tagName, attrs = {}, children = []) {
   }
 }
 
+export function html (content) {
+  return {
+    type: 'html',
+    content,
+  };
+}
+
 export function softbreak () {
   return {
     type: 'softbreak'

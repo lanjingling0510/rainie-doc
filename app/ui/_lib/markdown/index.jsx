@@ -1,11 +1,12 @@
-import React from 'react'
-import Remarkable from 'remarkable'
-import remarkableTree from 'app/ui/_lib/remarkable_tree'
-import MarkdownCode from 'app/ui/_lib/markdown_code'
+import React from 'react';
+import Remarkable from 'remarkable';
+import remarkableTree from 'app/ui/_lib/remarkable_tree';
+import MarkdownCode from 'app/ui/_lib/markdown_code';
 
 const md = new Remarkable({
-  linkify: true
-})
+  html: true,
+  linkify: true,
+});
 
 export default class Markdown extends React.Component {
   static propTypes = {
@@ -13,58 +14,63 @@ export default class Markdown extends React.Component {
   }
 
   render () {
-    const tree = remarkableTree(md.parse(this.props.value, {}))
-    const result = this._renderTree(tree)
+    const tree = remarkableTree(md.parse(this.props.value, {}));
+    const result = this._renderTree(tree);
 
     // Render single node as is
     if (result.length === 1) {
-      return result[0]
+      return result[0];
     // Then there are more than one node, wrap into div
     } else {
-      return <div>{result}</div>
+      return <div>{result}</div>;
     }
   }
 
   _renderTree (tokens) {
-    return tokens.map(this._renderToken.bind(this))
+    return tokens.map(this._renderToken.bind(this));
   }
 
   _renderToken (token, index) {
     switch (token.type) {
       case 'tag':
-        const extraAttrs = {}
-        const extraChildren = []
+        const extraAttrs = {};
+        const extraChildren = [];
 
         if (/^h[2-6]$/.test(token.tagName)) {
-          let headerLinkId = this._getUrlIdFromText(token)
-          extraAttrs.id = headerLinkId
+          let headerLinkId = this._getUrlIdFromText(token);
+          extraAttrs.id = headerLinkId;
           extraChildren.push(<a
             href={`#${headerLinkId}`}
             className='doc-header_link'
             key={`${index}-2`}
           >
               #
-          </a>)
+          </a>);
         }
 
         return React.createElement(
           token.tagName,
           Object.assign({key: index}, token.attrs, extraAttrs),
           this._renderTree(token.children).concat(extraChildren)
-        )
+        );
 
       case 'text':
-        return token.content
+        return token.content;
 
       case 'softbreak':
-        return '\n'
+        return '\n';
 
       case 'code':
         return <MarkdownCode
           value={token.content.trim()}
           language={token.language}
           key={index}
-        />
+        />;
+
+      case 'html':
+        return <span
+          key={`${index}-2`}
+          dangerouslySetInnerHTML={{__html: token.content}} />;
     }
   }
 
@@ -74,20 +80,21 @@ export default class Markdown extends React.Component {
       .toLowerCase()
       .replace(/[^\w\d\.]/g, '-')
       .replace(/-+/g, '-')
-      .replace(/(^-|-$)/g, '')
+      .replace(/(^-|-$)/g, '');
   }
 
   _getTextFromToken (token) {
     if (token.type === 'text') {
-      return [token.content]
+      return [token.content];
     } else {
       return token.children.reduce((acc, token) => {
         if (token.type === 'text') {
-          return acc.concat(token.content)
+          return acc.concat(token.content);
         } else {
-          return acc.concat(token.children.map(this._getUrlIdFromText.bind(this)))
+          console.log(token);
+          return acc.concat(token.children.map(this._getUrlIdFromText.bind(this)));
         }
-      }, [])
+      }, []);
     }
   }
 }

@@ -4,7 +4,7 @@
 
 `rainie-doc`工具根据注释自动生成文档静态网站。
 
-![preview](https://raw.githubusercontent.com/lanjingling0510/rainie-doc/master/.github/preview.jpg)
+<img src="https://raw.githubusercontent.com/lanjingling0510/rainie-doc/master/.github/preview.jpg" style="width: 100%" />
 
 
 ## 特点

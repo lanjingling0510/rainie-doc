@@ -1,4 +1,4 @@
-import {text, tag, softbreak, code, tagName, attrs} from './utils'
+import {text, tag, softbreak, code, tagName, attrs, html} from './utils'
 
 export default function remarkableTree (tokens) {
   var tree = []
@@ -8,7 +8,7 @@ export default function remarkableTree (tokens) {
 
     // Process tag token
     if (isOpeningTagToken(token)) {
-      let closingPos = getClosingPosFor(tokens, pos)
+      let closingPos = getClosingPosFor(tokens, pos);
       tree.push(tag(
         tagName(token),
         attrs(token),
@@ -46,9 +46,11 @@ export default function remarkableTree (tokens) {
       const {alt, src, title} = token
       tree.push(tag('img', {alt, src, title}, []))
       pos++
-
-    // Fail
+    } else if (token.type === 'htmltag') {
+      tree.push(html(token.content));
+      pos++;
     } else {
+      // Fail
       throw new Error(`Failed to convert Remarkable tokens stream to a tree: an unknown token type "${token.type}"`)
     }
   }
