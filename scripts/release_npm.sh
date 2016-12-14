@@ -9,9 +9,9 @@ for pattern in CHANGELOG.md \
 	README.md \
 	index.js \
 	package.json \
-	generateDocsjson.js \
-	lib/* \
-	dist/*
+	lib \
+	dist \
+	generateDocsjson.js
 do
 	cp -r "$pattern" "$dir"
 done
