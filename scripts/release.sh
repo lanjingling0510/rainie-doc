@@ -7,4 +7,4 @@ node ./index.js
 #生成新的tag
 cqGit
 #发布npm包
-./release_npm.sh
+./scripts/release_npm.sh
