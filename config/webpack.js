@@ -6,12 +6,12 @@ const appConfig = require('./app');
 const env = process.env.NODE_ENV;
 const isDevelopment = env === 'development';
 const isProduction = env === 'production';
-const isSystemTests = process.env.SYSTEM_TESTS;
-const enableDebuggingTools = isDevelopment && !isSystemTests;
+const isTest = env === 'test';
+
 
 const plugins = [];
 
-if (enableDebuggingTools) {
+if (isDevelopment) {
   plugins.push(
       new webpack.HotModuleReplacementPlugin(),
       new HtmlWebpackPlugin({
@@ -20,6 +20,12 @@ if (enableDebuggingTools) {
         inject: 'body',
         favicon: path.join(appConfig.entryPath, 'ui/static/img/favicon.png')
       }), // Inject all scripts into the body
+      new webpack.DefinePlugin({
+        'process.env.NODE_ENV': '"development"'
+      })
+     );
+} else if (isTest) {
+  plugins.push(
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': '"development"'
       })
